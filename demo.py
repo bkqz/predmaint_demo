@@ -208,10 +208,14 @@ with tab4:
     def plot_results(y_true, y_pred):
         width = 0.8
 
-        actuals = [int(x) for x in y_true.values]
-        predictions = list(y_pred)
+        # actuals = [int(x) for x in y_true.values]
+        # predictions = list(y_pred)
 
-        indices = np.arange(len(y_pred))
+        # indices = np.arange(len(y_pred))
+        actuals = np.asarray(y_true).ravel().astype(int).tolist()
+        predictions = np.asarray(y_pred).ravel().tolist()
+    
+        indices = np.arange(len(predictions))
 
         plt.figure(figsize=(60,20))
 
